@@ -1,11 +1,14 @@
 require 'rpi_gpio'
 
 class HookReceiverController < ApplicationController
+  skip_before_action :verify_authenticity_token
 
   def animal
     # receiving webhooks from animal crossing
-    puts request.inspect
+    puts '**********************'
+    puts '**********************'
     puts request.to_h
-    puts request.to_json
+    puts '**********************'
+    puts '**********************'
   end
 end
