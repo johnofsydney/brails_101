@@ -7,7 +7,7 @@ class HookReceiverController < ApplicationController
     # receiving webhooks from animal crossing
     puts '**********************'
     puts '**********************'
-    puts request.to_h
+    puts JSON.parse(request)
     puts '**********************'
     puts '**********************'
   end
