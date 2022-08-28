@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   # root "articles#index"
   get 'led/on' => 'led#on'
   get 'led/off' => 'led#off'
+
+  post 'hook/animal' => 'hook_receiver#animal'
 end
