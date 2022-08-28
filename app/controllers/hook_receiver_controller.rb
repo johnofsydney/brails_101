@@ -36,5 +36,8 @@ class HookReceiverController < ApplicationController
 end
 # this works to test on local
 # ```
-# curl http://127.0.0.1:3000/hook/animal -d "payload=true"
+# $ curl http://127.0.0.1:3000/hook/animal -d "payload=true"
 # ```
+
+# to start ngrok
+# ngrok http 3000
