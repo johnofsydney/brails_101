@@ -1,0 +1,2 @@
+class PinStatus < ApplicationRecord
+end

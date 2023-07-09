@@ -1,23 +1,25 @@
 require 'rpi_gpio'
 
 class HookReceiverController < ApplicationController
-  RPi::GPIO.set_numbering :bcm
-  RPi::GPIO.setup [16,23,26], :as => :output
+  OUTPUT_PINS = [16, 20, 21]
+  # RPi::GPIO.set_numbering :bcm
+  # RPi::GPIO.setup OUTPUT_PINS, :as => :output
 
   skip_before_action :verify_authenticity_token
 
-  def animal
+  def github
     # receiving webhooks from animal crossing
-    puts JSON.parse(params["payload"])
+    Rails.logger.info params
+
     flash(0.05)
 
-    render json: { webhook: 'push_to_animal_crossing' }
+    render json: { webhook: 'push received' }
   end
 
 
   def flash(sleep_time)
     10.times do
-      [16,23,26].each do |pin|
+      OUTPUT_PINS.each do |pin|
         on(pin)
         sleep(sleep_time)
         off(pin)

@@ -1,0 +1,5 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Measurements</h1>
+
+<%= line_chart Measurement.pluck(:created_at, :temperature) %>

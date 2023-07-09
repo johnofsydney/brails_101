@@ -72,5 +72,7 @@ group :test do
 end
 
 
-gem 'rpi_gpio'
-
+gem 'rpi_gpio' # https://www.rubydoc.info/gems/rpi_gpio/0.5.0
+gem 'dht-sensor-ffi' # https://github.com/chetan/dht-sensor-ffi
+gem 'rest-client'
+gem 'chartkick'
