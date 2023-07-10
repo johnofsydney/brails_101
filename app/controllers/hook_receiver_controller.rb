@@ -2,13 +2,10 @@ require 'rpi_gpio'
 
 class HookReceiverController < ApplicationController
   OUTPUT_PINS = [16, 20, 21]
-  # RPi::GPIO.set_numbering :bcm
-  # RPi::GPIO.setup OUTPUT_PINS, :as => :output
-
   skip_before_action :verify_authenticity_token
 
   def github
-    # receiving webhooks from animal crossing
+    # receiving webhooks
     Rails.logger.info params
 
     flash(0.05)
@@ -38,7 +35,7 @@ class HookReceiverController < ApplicationController
 end
 # this works to test on local
 # ```
-# $ curl http://127.0.0.1:3000/hook/animal -d "payload=true"
+# $ curl http://127.0.0.1:3000/hook/github -d "payload=true"
 # ```
 
 # to start ngrok
